@@ -26,7 +26,7 @@ services.factory('DummyFactory', function ($resource) {
 
 services.factory('UsersFactory', function ($resource) {
     return $resource('/Sample2/users', {}, {
-        query: { method: 'GET' },
+        query: { method: 'GET' , isArray: true},
         create: { method: 'POST' }
     });
 });

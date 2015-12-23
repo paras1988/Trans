@@ -31,7 +31,7 @@ public class UserRestService {
 	 * 
 	 * @Produces(MediaType.APPLICATION_JSON)
 	 */
-	@RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON)
+	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<List<User>> getAllUsersInJSON() {
 		return userService.getAllUsers();
 	}
@@ -43,7 +43,7 @@ public class UserRestService {
 	 * 
 	 * @Produces(MediaType.APPLICATION_JSON)
 	 */
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON)
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<User> getUserById(@PathVariable final int id) {
 		return new ResponseEntity<User>(userService.getById(id), HttpStatus.OK);
 
@@ -56,7 +56,7 @@ public class UserRestService {
 	 * 
 	 * @Produces(MediaType.APPLICATION_JSON)
 	 */
-	@RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON)
+	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<User> create(final User user) {
 		return new ResponseEntity<User>(userService.createNewUser(user), HttpStatus.OK);
 	}
@@ -70,7 +70,7 @@ public class UserRestService {
 	 * 
 	 * @Produces(MediaType.APPLICATION_JSON)
 	 */
-	@RequestMapping(value = "/{id}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON)
+	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<User> update(final User user) {
 		return new ResponseEntity<User>(userService.update(user), HttpStatus.OK);
 	}
@@ -82,7 +82,7 @@ public class UserRestService {
 	 * 
 	 * @Produces(MediaType.APPLICATION_JSON)
 	 */
-	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON)
+	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public void remove(@PathVariable final int id) {
 		userService.remove(id);
 	}
